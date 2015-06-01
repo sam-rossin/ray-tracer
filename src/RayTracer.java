@@ -13,11 +13,16 @@ public class RayTracer{
 	//The Scene Is defined here
 	double viewerPosition[] = {15, 0, 2};
 	
+	//Pixels per unit distance
 	private int dpi = 256;
+	
+	//Position of the pizel grid
 	double gridX = 10;
 	double gridY = -3; // (gridX, gridY, gridZ) is the upper left
 	double gridZ = 4;  // corner of the pixel grid, which lies in
 					  // the plane X=10
+	
+	//dimensions of the pixel grid
 	double gridWidth = 6; // gridWidth and gridHeight are the
 	double gridHeight = 4; // dimensions of the pixel grid
 	
@@ -36,7 +41,7 @@ public class RayTracer{
 	double[] background = new double[]{10, 10, 40};;
 	int picNum = 5;
 	
-	private String name = "sphere";
+	private String name = "cubes";
 	//end scene definition
 	
 	public static void main(String[] args) {
