@@ -1,2 +1,2 @@
 # ray-tracer
-This is a simple ray tracer. Setup of the image is done in RayTracer.java. Images are stored to pgn files.
+This is a simple ray tracer. The main method is in RayTracer.java, which is also where the image to be traced is set up. The objects in an image are stored in the 
