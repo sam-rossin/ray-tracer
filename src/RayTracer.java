@@ -16,7 +16,7 @@ public class RayTracer{
 	//Pixels per unit distance
 	private int dpi = 256;
 	
-	//Position of the pizel grid
+	//Position of the pixel grid
 	double gridX = 10;
 	double gridY = -3; // (gridX, gridY, gridZ) is the upper left
 	double gridZ = 4;  // corner of the pixel grid, which lies in
