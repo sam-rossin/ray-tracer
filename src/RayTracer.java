@@ -33,15 +33,15 @@ public class RayTracer{
 	
 	//lighting
 	double[] ambient = new double[]{.3f, .3f, .3f};
-	private LightSource[] lights = {new LightSource(new double[] {1, 1, 1}, new double[] {6, -7, 4}), 
-			new LightSource(new double[] {1, 1, 1}, new double[] {0, 1 , 15})};
+	private LightSource[] lights = {new LightSource(new double[] {1, 1, 1}, new double[] {14, -7, 4}), 
+			new LightSource(new double[] {.8, .8, 1}, new double[] {15, 5 , 5})};
 	
 	//objects
 	private Shape[] objects;
 	double[] background = new double[]{10, 10, 40};;
 	int picNum = 5;
 	
-	private String name = "cubes";
+	private String name = "refsphere";
 	//end scene definition
 	
 	public static void main(String[] args) {
@@ -250,10 +250,18 @@ public class RayTracer{
 	}
 	
 	private void setupPic5(){
-		objects = new Shape[]{new Ellipsoid(0, .8f, .4f, .2f, new double[]{-2, 3, 1},1,2,3),
-				 new Plane(1, .5, .3, .3, new double[]{0,0,1}, -1.2, true)};
+		objects = new Shape[]{new Sphere(0, .8f, .2f, .8f, 3f, new double[]{8, 0, 2}),
+				new Sphere(1, .6f, .5f, .5f, 2f, new double[]{20, 1, 2}),
+				new Sphere(2, .6f, .5f, .5f, 4f, new double[]{21, -6, -5}),
+				new Sphere(3, .6f, .5f, .5f, 3f, new double[]{22, 8, 7}),
+				new Sphere(4, .6f, .5f, .5f, 2f, new double[]{19, -5, 3}),
+				new Cube(1, .5, .5, .9, new double[]{24, 7, -7}, 5) };
 		background = new double[]{10, 10, 40};
-		objects[0].color = new double[]{40, 40, 140};
+		objects[0].color = new double[]{150, 150, 150};
+		objects[1].color = new double[]{220, 0, 50};
+		objects[2].color = new double[]{50, 0, 200};
+		objects[3].color = new double[]{0, 100, 120};
+		objects[4].color = new double[]{50, 100, 50};
 	}
 	
 	public void makePicture() {
