@@ -14,34 +14,34 @@ public class RayTracer{
 	double viewerPosition[] = {15, 0, 2};
 	
 	//Pixels per unit distance
-	private int dpi = 256;
+	private int dpi = 1024;
 	
 	//Position of the pixel grid
 	double gridX = 10;
-	double gridY = -3; // (gridX, gridY, gridZ) is the upper left
-	double gridZ = 4;  // corner of the pixel grid, which lies in
+	double gridY = -4.5; // (gridX, gridY, gridZ) is the upper left
+	double gridZ = 5.5;  // corner of the pixel grid, which lies in
 					  // the plane X=10
 	
 	//dimensions of the pixel grid
-	double gridWidth = 6; // gridWidth and gridHeight are the
-	double gridHeight = 4; // dimensions of the pixel grid
+	double gridWidth = 9; // gridWidth and gridHeight are the
+	double gridHeight = 5; // dimensions of the pixel grid
 	
 	//constants
-	int maxLevel = 8;
+	int maxLevel = 10;
 	double minWeight = .01f;
 	int phong = 30;
 	
 	//lighting
 	double[] ambient = new double[]{.3f, .3f, .3f};
-	private LightSource[] lights = {new LightSource(new double[] {1, 1, 1}, new double[] {14, -7, 4}), 
-			new LightSource(new double[] {.8, .8, 1}, new double[] {15, 5 , 5})};
+	private LightSource[] lights = {new LightSource(new double[] {1, 1, 1}, new double[] {0, -12, 7}), 
+			new LightSource(new double[] {.8, .8, 1}, new double[] {0, 6 , 14})};
 	
 	//objects
 	private Shape[] objects;
 	double[] background = new double[]{10, 10, 40};;
 	int picNum = 5;
 	
-	private String name = "refsphere";
+	private String name = "shinyorbs4";
 	//end scene definition
 	
 	public static void main(String[] args) {
@@ -250,18 +250,15 @@ public class RayTracer{
 	}
 	
 	private void setupPic5(){
-		objects = new Shape[]{new Sphere(0, .8f, .2f, .8f, 3f, new double[]{8, 0, 2}),
-				new Sphere(1, .6f, .5f, .5f, 2f, new double[]{20, 1, 2}),
-				new Sphere(2, .6f, .5f, .5f, 4f, new double[]{21, -6, -5}),
-				new Sphere(3, .6f, .5f, .5f, 3f, new double[]{22, 8, 7}),
-				new Sphere(4, .6f, .5f, .5f, 2f, new double[]{19, -5, 3}),
-				new Cube(1, .5, .5, .9, new double[]{24, 7, -7}, 5) };
+		objects = new Shape[]{new Sphere(0, 1f, 0.05f, .9f, 2.2f, new double[]{-2, 3, 1}),
+				new Sphere(1, 1f, 0.05f, .9f, 1.5, new double[]{-4, -3, .3}),
+				new Sphere(2, 1f, 0.05f, .9f, 1.2f, new double[]{1, .5f, 0}),
+				new Sphere(3, 1f, 0.05f, .9f, 4f, new double[]{-10, -1f, 2.7}),
+				new Sphere(4, .5f, 0.2f, .5f, 20f, new double[]{3, 0, 3}),
+				new Sphere(5, 1f, 0.05f, .9f, .7f, new double[]{1.5, -4.5, -.5}),
+				 new Plane(6, .5, .3, .2, new double[]{0,0,1}, -1.21, true)};
 		background = new double[]{10, 10, 40};
-		objects[0].color = new double[]{150, 150, 150};
-		objects[1].color = new double[]{220, 0, 50};
-		objects[2].color = new double[]{50, 0, 200};
-		objects[3].color = new double[]{0, 100, 120};
-		objects[4].color = new double[]{50, 100, 50};
+		for(int i= 0; i< 5; i++) objects[i].color = new double[]{30*((i+2)%6), 200-(30*(i+1)), 40*(i+1)};
 	}
 	
 	public void makePicture() {
