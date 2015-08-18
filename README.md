@@ -5,6 +5,6 @@ There are a few example images in the root directory.
 
 ### TODO
 * Separate the setup from the other code in a more user friendly matter.
-* Implement more primatives.
-* Support CSG trees to allow for combinations of primatives.
+* Implement more primitives.
+* Support CSG trees to allow for combinations of primitives.
 * Refactor math to always use Matrix objects instead of using a hodge podge of different functions on arrays sometimes.
